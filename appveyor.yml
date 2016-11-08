@@ -1,0 +1,12 @@
+init:
+  - git config --global core.autocrlf true
+version: '{build}'
+pull_requests:
+  do_not_increment_build_number: true
+branches:
+  only:
+    - master
+build_script:
+  - build.cmd --quiet verify
+test: off
+deploy: off
