@@ -30,7 +30,7 @@ namespace SportsStore {
                 options.UseSqlite(
                     Configuration["Data:SportStoreIdentity:ConnectionString"]));
 
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppIdentityDbContext>();
 
             services.AddTransient<IProductRepository, EFProductRepository>();
