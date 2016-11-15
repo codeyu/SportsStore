@@ -22,4 +22,4 @@ EXPOSE 6000/tcp
 
 
 # Run
-ENTRYPOINT ["dotnet", "SportsStore.dll"]
+ENTRYPOINT ["dotnet", "app.dll"]
