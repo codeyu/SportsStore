@@ -11,7 +11,7 @@ ENV ASPNETCORE_ENVIRONMENT="Production"
 
 
 # Copy files to app directory
-COPY src/SportsStore/bin/Debug/netcoreapp1.0/publish /app
+COPY /src/SportsStore/bin/Debug/netcoreapp1.0/publish /app
 
 # Set working directory
 WORKDIR /app
