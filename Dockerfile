@@ -1,25 +1,20 @@
-FROM microsoft/aspnetcore-build:1.0.1
+FROM microsoft/aspnetcore:1.0.1
 
 MAINTAINER codeyu
-
-COPY ./src/SportsStore /app
-WORKDIR /app
-
-RUN ["dotnet", "restore"]
-RUN ["dotnet", "build"]
-RUN ["dotnet", "publish"]
 
 # Set ASP.NET Core environment variables
 ENV ASPNETCORE_URLS="http://*:6000"
 ENV ASPNETCORE_ENVIRONMENT="Production"
 
 
+# Copy files to app directory
+COPY /release /app
+
 # Set working directory
-WORKDIR /app/bin/Debug/netcoreapp1.0/publish
+WORKDIR /app
 
 # Open port
 EXPOSE 6000/tcp
 
-
 # Run
-ENTRYPOINT ["dotnet", "app.dll"]
+ENTRYPOINT ["dotnet", "SportsStore.dll"]

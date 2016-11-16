@@ -9,4 +9,19 @@ branches:
 build_script:
   - build.cmd --quiet verify
 test: off
-deploy: off
+environment:
+  access_token:
+    secure: Ce6rBSdCmC40aASU6+9hDjLHjPp/M7TsJq2LQpTmGpvL/5fPs5l0cptHNGBTWK7+
+  git_email:
+    secure: dCEJcIf4jXWH0PrQcRaXuvvT8l7C5GwosxOsmi0c564=
+on_success:
+  - git config --global credential.helper store
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+  - git config --global user.email "$($env:git_email)"
+  - git config --global user.name "codeyu"
+  - git config --global core.autocrlf true
+  - git checkout master
+  - git add .
+  - git commit -m "ci deploy"
+  - git status
+  - git push origin master:release -f
