@@ -5,3 +5,5 @@
 [![CircleCI](https://circleci.com/gh/codeyu/SportsStore.svg?style=svg)](https://circleci.com/gh/codeyu/SportsStore)
 
 The  e-commerce application source code of Pro ASP.NET Core MVC
+
+Demo: [SportsStore](http://codeyu-sportsstore.daoapp.io/)
