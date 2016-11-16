@@ -11,7 +11,7 @@ build_script:
 test: off
 environment:
   access_token:
-    secure: Ce6rBSdCmC40aASU6+9hDjLHjPp/M7TsJq2LQpTmGpvL/5fPs5l0cptHNGBTWK7+
+    secure: gPLaCoISbGAJCbPE7vGAEkRMtiDH17XvyEzweZlp8pt6zjsOCTMZlmd1296tzgcz
   git_email:
     secure: dCEJcIf4jXWH0PrQcRaXuvvT8l7C5GwosxOsmi0c564=
 on_success:
