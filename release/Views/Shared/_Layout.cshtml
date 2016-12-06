@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/*.min.css" />
+    <link rel="stylesheet" asp-href-include="/lib/fontawesome/css/*.css" />
+    <link rel="stylesheet" asp-href-include="/lib/css/*.css" />
+    <link rel="Shortcut Icon" type="image/x-icon" href="/lib/favicon.ico">
+    <title>SportsStore</title>
+</head>
+<body>
+    <div class="navbar navbar-inverse" role="navigation">
+        <a class="navbar-brand" href="/">SPORTS STORE</a>
+        <div class="pull-right">
+            @await Component.InvokeAsync("CartSummary")
+        </div>
+    </div>
+    <div class="row panel">
+        <div id="categories" class="col-xs-3">
+            @await Component.InvokeAsync("NavigationMenu")
+        </div>
+        <div class="col-xs-8">
+            @RenderBody()
+        </div>
+    </div>
+    <div class="footer">© @System.DateTime.Now.Year <a href="http://codeyu.com" target="_blank" rel="nofollow">CodeYu.</a> <a href="https://github.com/codeyu/SportsStore" target="_blank">
+        <span class="fa fa-stack fa">
+        <span class="fa fa-square-o fa-stack-2x"></span>
+        <span class="fa fa-github fa-stack-1x"></span>
+      </span></a> Powered by @($"{System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription} on {System.Runtime.InteropServices.RuntimeInformation.OSDescription.Split(':')[0]}")</div>
+</body>
+</html>
