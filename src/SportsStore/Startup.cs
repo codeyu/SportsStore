@@ -7,7 +7,9 @@ using SportsStore.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-
+using System.Globalization;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Localization;
 namespace SportsStore {
 
     public class Startup {
@@ -51,7 +53,7 @@ namespace SportsStore {
             } else {
                 app.UseExceptionHandler("/Error");
             }
-
+            app.UseRequestLocalization(BuildLocalizationOptions());
             app.UseStaticFiles();
             app.UseSession();
             app.UseIdentity();
@@ -87,6 +89,27 @@ namespace SportsStore {
             SeedData.EnsurePopulated(app);
             IdentitySeedData.EnsurePopulated(app);
         }
+        private RequestLocalizationOptions BuildLocalizationOptions()
+        {
+            var supportedCultures = new List<CultureInfo>
+            {
+                new CultureInfo("en-US"),
+                new CultureInfo("zh-Hans"),
+                new CultureInfo("zh-Hant"),
+                new CultureInfo("ja-JP"),
+                new CultureInfo("es-ES"),
+                new CultureInfo("de-DE"),
+                new CultureInfo("fr-FR"),
+                new CultureInfo("ko-KR")
+            };
 
+            var options = new RequestLocalizationOptions {
+                DefaultRequestCulture = new RequestCulture("en-US"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            };
+
+            return options;
+        }
     }
 }

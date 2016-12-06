@@ -21,7 +21,8 @@
     "Microsoft.AspNetCore.Session": "1.1.0",
     "Microsoft.Extensions.Caching.Memory": "1.1.0",
     "Microsoft.AspNetCore.Http.Extensions": "1.1.0",
-    "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.1.0"
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.1.0",
+    "Microsoft.Extensions.PlatformAbstractions": "1.1.0-*"
   },
 
   "tools": {
