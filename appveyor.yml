@@ -1,6 +1,8 @@
 init:
   - git config --global core.autocrlf true
 version: '{build}'
+# Start builds on tags only (GitHub and BitBucket)
+skip_non_tags: true
 pull_requests:
   do_not_increment_build_number: true
 branches:
