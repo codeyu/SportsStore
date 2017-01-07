@@ -42,7 +42,8 @@
 
   "buildOptions": {
     "emitEntryPoint": true,
-    "preserveCompilationContext": true
+    "preserveCompilationContext": true,
+    "copyToOutput": "hosting.json"
   },
 
   "runtimeOptions": {
@@ -57,7 +58,8 @@
       "Views",
       "appsettings.json",
       "appsettings.production.json",
-      "web.config"
+      "web.config",
+      "hosting.json"
     ]
   },
 
